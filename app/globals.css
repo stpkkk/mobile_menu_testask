@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Golos";
+  src: url("../public/fonts/golos-text_regular.woff2");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Golos";
+  src: url("../public/fonts/golos-text_medium.woff2");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Golos";
+  src: url("../public/fonts/golos-text_demibold.woff2");
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "golos", sans-serif;
+  color: #fff;
+  background: #151617;
+}
+
+/* FLEX */
+.flex_center {
+  @apply flex justify-center items-center;
+}
+
+.flex_start {
+  @apply flex justify-start items-start;
+}
+
+.flex_end {
+  @apply flex justify-end items-center;
+}
+
+.flex_between {
+  @apply flex justify-between items-center flex-wrap;
+}
