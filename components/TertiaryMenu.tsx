@@ -9,7 +9,12 @@ const TertiaryMenu: React.FC = () => {
   return (
     <>
       <div className="border-b-[1px] border-grayLine opacity-70" />
-      <ul>
+      <ul
+        className={`${
+          tertiaryMenuItems.length > 8 &&
+          "overflow-y-scroll h-[calc(100vh-10rem)]"
+        }`}
+      >
         {tertiaryMenuItems.map(item => (
           <li
             className="cursor-pointer py-3 pl-5 pr-10 hover:bg-blue-300"

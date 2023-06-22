@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import DropdownMenu from "./DropdownMenu";
 import { CloseIcon } from "@public/icons";
 import { useAppDispatch } from "@redux/hooks";
@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex_between mb-10 p-5">
+    <div className="flex_between mb-5 p-5">
       <DropdownMenu />
       <div className="cursor-pointer" onClick={handleClick}>
         <CloseIcon />
