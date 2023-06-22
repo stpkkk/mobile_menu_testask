@@ -1,12 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { menuData } from "@data";
 
 type MenuState = {
   isMainMenuOpen: boolean;
+  menuData: any;
 };
 
 const initialState = {
   isMainMenuOpen: false,
-} as MenuState;
+  ...menuData,
+};
 
 export const menuSlice = createSlice({
   name: "menu",
