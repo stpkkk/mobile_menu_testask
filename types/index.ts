@@ -1,3 +1,3 @@
-import { MenuData } from "./menuData";
+import { MenuData, MenuItem } from "./menuData";
 
-export type { MenuData };
+export type { MenuData, MenuItem };

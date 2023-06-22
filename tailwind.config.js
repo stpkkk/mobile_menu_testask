@@ -13,6 +13,8 @@ module.exports = {
       },
       colors: {
         black: "#151617",
+        gray: "#577188",
+        grayLine: "#C6D6E5",
       },
     },
   },

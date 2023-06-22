@@ -6,12 +6,12 @@ export const menuData: MenuData = {
       id: 1,
       title: "Services",
       parentId: null,
-      subMenuItems: [
+      secondaryMenuItems: [
         {
           id: 5,
           title: "Cloud computing",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -54,7 +54,7 @@ export const menuData: MenuData = {
           title: "Dedicated servers",
           content: "Содержимое для Dedicated servers",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -97,7 +97,7 @@ export const menuData: MenuData = {
           title: "Platform services",
           content: "Содержимое для Platform services",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -140,7 +140,7 @@ export const menuData: MenuData = {
           title: "Information Security",
           content: "Содержимое для Information Security",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -184,12 +184,12 @@ export const menuData: MenuData = {
       id: 2,
       title: "Managed IT",
       parentId: null,
-      subMenuItems: [
+      secondaryMenuItems: [
         {
           id: 5,
           title: "Cloud computing",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -232,7 +232,7 @@ export const menuData: MenuData = {
           title: "Dedicated servers",
           content: "Содержимое для Dedicated servers",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -275,7 +275,7 @@ export const menuData: MenuData = {
           title: "Platform services",
           content: "Содержимое для Platform services",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -318,7 +318,7 @@ export const menuData: MenuData = {
           title: "Information Security",
           content: "Содержимое для Information Security",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -362,12 +362,12 @@ export const menuData: MenuData = {
       id: 3,
       title: "Telekom Solutions",
       parentId: null,
-      subMenuItems: [
+      secondaryMenuItems: [
         {
           id: 5,
           title: "Cloud computing",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -410,7 +410,7 @@ export const menuData: MenuData = {
           title: "Dedicated servers",
           content: "Содержимое для Dedicated servers",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -453,7 +453,7 @@ export const menuData: MenuData = {
           title: "Platform services",
           content: "Содержимое для Platform services",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -496,7 +496,7 @@ export const menuData: MenuData = {
           title: "Information Security",
           content: "Содержимое для Information Security",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -540,12 +540,12 @@ export const menuData: MenuData = {
       id: 4,
       title: "About Us",
       parentId: null,
-      subMenuItems: [
+      secondaryMenuItems: [
         {
           id: 5,
           title: "Cloud computing",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -588,7 +588,7 @@ export const menuData: MenuData = {
           title: "Dedicated servers",
           content: "Содержимое для Dedicated servers",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -631,7 +631,7 @@ export const menuData: MenuData = {
           title: "Platform services",
           content: "Содержимое для Platform services",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
@@ -674,7 +674,7 @@ export const menuData: MenuData = {
           title: "Information Security",
           content: "Содержимое для Information Security",
           parentId: 1,
-          subMenuItems: [
+          tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",

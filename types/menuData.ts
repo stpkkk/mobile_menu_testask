@@ -2,8 +2,9 @@ export interface MenuItem {
   id: number;
   title: string;
   parentId: number | null;
+  secondaryMenuItems?: MenuItem[];
+  tertiaryMenuItems?: MenuItem[];
   content?: string;
-  subMenuItems?: MenuItem[];
 }
 
 export interface MenuData {

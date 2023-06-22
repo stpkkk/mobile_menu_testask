@@ -2,13 +2,14 @@ import React, { Dispatch, SetStateAction } from "react";
 import DropdownMenu from "./DropdownMenu";
 import { CloseIcon } from "@public/icons";
 import { useAppDispatch } from "@redux/hooks";
-import { toggleMainMenu } from "@redux/features/menuSlice";
+import { resetMenu, toggleMainMenu } from "@redux/features/menuSlice";
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
     dispatch(toggleMainMenu());
+    dispatch(resetMenu());
   };
 
   return (

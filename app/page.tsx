@@ -1,5 +1,5 @@
 "use client";
-import { MainMenu } from "@/components";
+import { Menu } from "@/components";
 import { BurgerMenuIcon } from "@public/icons";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { toggleMainMenu } from "@redux/features/menuSlice";
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main>
       {isMainMenuOpen ? (
-        <MainMenu />
+        <Menu />
       ) : (
         <div
           className={`p-5 duration-1000 transition-all ease-out cursor-pointer ${
