@@ -24,7 +24,10 @@
   box-sizing: border-box;
   font-family: "golos", sans-serif;
   color: #151617;
-  background: #fff;
+}
+
+body {
+  max-width: 360px;
 }
 
 /* FLEX */

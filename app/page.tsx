@@ -1,23 +1,27 @@
 "use client";
-import { useState } from "react";
 import { MainMenu } from "@/components";
 import { BurgerMenuIcon } from "@public/icons";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
+import { toggleMainMenu } from "@redux/features/menuSlice";
 
 export default function Home() {
-  const [isOpenedMenu, setOpenedMenu] = useState(false);
+  const isMainMenuOpen = useAppSelector(
+    state => state.menuReducer.isMainMenuOpen
+  );
+  const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    setOpenedMenu(true);
+    dispatch(toggleMainMenu());
   };
 
   return (
     <main>
-      {isOpenedMenu ? (
-        <MainMenu setOpenedMenu={setOpenedMenu} />
+      {isMainMenuOpen ? (
+        <MainMenu />
       ) : (
         <div
           className={`p-5 duration-1000 transition-all ease-out cursor-pointer ${
-            isOpenedMenu ? "-translate-x-full" : "translate-x-0"
+            isMainMenuOpen ? "-translate-x-full" : "translate-x-0"
           }`}
           onClick={handleClick}
         >

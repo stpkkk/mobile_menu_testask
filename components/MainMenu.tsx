@@ -3,14 +3,10 @@ import Header from "./Header";
 import { menuData } from "@data";
 import { ArrowRightIcon } from "@public/icons";
 
-type Props = {
-  setOpenedMenu: Dispatch<SetStateAction<boolean>>;
-};
-
-const MainMenu: React.FC<Props> = ({ setOpenedMenu }) => {
+const MainMenu: React.FC = () => {
   return (
     <div className="max-w-[360px] w-full p-5">
-      <Header setOpenedMenu={setOpenedMenu} />
+      <Header />
       <div className="flex justify-between h-[calc(100vh-8rem)] flex-col">
         <ul className="max-w-[300px]">
           {menuData.menuItems.map(item => {
