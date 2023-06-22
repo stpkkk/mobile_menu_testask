@@ -19,12 +19,13 @@ const SecondaryMenu: React.FC = () => {
       dispatch(toggleTertiaryMenu(selectedItem.tertiaryMenuItems));
     }
   };
+
   return (
     <ul>
       {secondaryMenuItems.map(item => (
         <li
           key={item.id}
-          className="py-3 text-[18px] leading-[30px] cursor-pointer"
+          className=" py-3 px-5 mr-5 hover:bg-blue-300 text-[18px] leading-[30px] cursor-pointer"
           onClick={() => handleSecondaryMenuItemClick(item.id)}
         >
           <div className="flex_between">

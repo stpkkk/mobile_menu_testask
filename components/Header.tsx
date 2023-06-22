@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="flex_between mb-16">
+    <div className="flex_between mb-10 p-5">
       <DropdownMenu />
       <div className="cursor-pointer" onClick={handleClick}>
         <CloseIcon />

@@ -5,20 +5,24 @@ const TertiaryMenu: React.FC = () => {
   const tertiaryMenuItems = useAppSelector(
     state => state.menuReducer.tertiaryMenuItems
   );
+
   return (
     <>
-      <div className="border-b-[1px] border-grayLine mt-5 opacity-70" />
+      <div className="border-b-[1px] border-grayLine opacity-70" />
       <ul>
         {tertiaryMenuItems.map(item => (
-          <li className="cursor-pointer py-5" key={item.id}>
-            <div className="">
+          <li
+            className="cursor-pointer py-3 pl-5 pr-10 hover:bg-blue-300"
+            key={item.id}
+          >
+            <>
               <div className="font-medium text-[16px] leading-6">
                 {item.title}
               </div>
               <div className="text-[12px] leading-5 text-gray">
                 {item.content}
               </div>
-            </div>
+            </>
           </li>
         ))}
       </ul>

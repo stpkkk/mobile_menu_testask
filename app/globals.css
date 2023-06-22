@@ -26,10 +26,6 @@
   color: #151617;
 }
 
-body {
-  max-width: 360px;
-}
-
 /* FLEX */
 .flex_center {
   @apply flex justify-center items-center;
