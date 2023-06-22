@@ -11,6 +11,9 @@ module.exports = {
       fontFamily: {
         golos: ["Golos", "sans-serif"],
       },
+      colors: {
+        black: "#151617",
+      },
     },
   },
   plugins: [],
