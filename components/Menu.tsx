@@ -13,26 +13,36 @@ import { ArrowLeftIcon } from "@public/assets/icons";
 const Menu: React.FC = () => {
   const dispatch = useAppDispatch();
 
-  const isSecondaryMenuOpen = useAppSelector(
-    state => state.menuReducer.isSecondaryMenuOpen
-  );
+  const mainMenuItems = useAppSelector(state => state.menuReducer.menuItems);
 
-  const isTertiaryMenuOpen = useAppSelector(
-    state => state.menuReducer.isTertiaryMenuOpen
-  );
+  // const isSecondaryMenuOpen = useAppSelector(
+  //   state => state.menuReducer.isSecondaryMenuOpen
+  // );
 
-  const handleBackClick = () => {
-    if (isTertiaryMenuOpen) {
-      dispatch(closeTertiaryMenu());
-    } else if (isSecondaryMenuOpen) {
-      dispatch(closeSecondaryMenu());
-    }
-  };
+  // const isMainMenuOpen = useAppSelector(
+  //   state => state.menuReducer.isMainMenuOpen
+  // );
+
+  // const secondaryMenuItems = useAppSelector(
+  //   state => state.menuReducer.secondaryMenuItems
+  // );
+
+  // const isTertiaryMenuOpen = useAppSelector(
+  //   state => state.menuReducer.isTertiaryMenuOpen
+  // );
+
+  // const handleBackClick = () => {
+  //   if (isTertiaryMenuOpen) {
+  //     dispatch(closeTertiaryMenu());
+  //   } else if (isSecondaryMenuOpen) {
+  //     dispatch(closeSecondaryMenu());
+  //   }
+  // };
 
   return (
     <div className="max-w-[360px] w-full">
       <Header />
-      {isSecondaryMenuOpen || isTertiaryMenuOpen ? (
+      {/* {isSecondaryMenuOpen || isTertiaryMenuOpen ? (
         <div
           className="flex items-center gap-3 cursor-pointer p-5"
           onClick={handleBackClick}
@@ -40,14 +50,14 @@ const Menu: React.FC = () => {
           <ArrowLeftIcon />
           <p className="text-[22px] leading-[32px]">Back</p>
         </div>
-      ) : null}
-      {isTertiaryMenuOpen ? (
+      ) : null} */}
+      {/* {isTertiaryMenuOpen ? (
         <TertiaryMenu />
       ) : isSecondaryMenuOpen ? (
-        <SecondaryMenu />
-      ) : (
-        <MainMenu />
-      )}
+        <SecondaryMenu items={secondaryMenuItems} />
+      ) : ( */}
+      <MainMenu items={mainMenuItems} />
+      {/* )} */}
     </div>
   );
 };

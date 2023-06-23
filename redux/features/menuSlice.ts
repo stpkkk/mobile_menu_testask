@@ -7,6 +7,7 @@ type MenuState = {
   isSecondaryMenuOpen: boolean;
   isTertiaryMenuOpen: boolean;
   isDropdownMenuOpen: boolean;
+  isMenuOpen: boolean;
   menuData?: MenuDataTypes;
   secondaryMenuItems: MenuItemTypes[];
   tertiaryMenuItems: MenuItemTypes[];
@@ -20,6 +21,7 @@ const initialState: MenuState = {
   isDropdownMenuOpen: false,
   secondaryMenuItems: [],
   tertiaryMenuItems: [],
+  isMenuOpen: false,
   ...menuData,
 };
 
@@ -29,7 +31,14 @@ export const menuSlice = createSlice({
   reducers: {
     resetMenu: () => initialState,
     toggleMainMenu: state => {
-      state.isMainMenuOpen = !state.isMainMenuOpen;
+      state.isMenuOpen = !state.isMenuOpen;
+      // state.isMainMenuOpen = true; //!
+    },
+    backFromSubMenu: state => {
+      (state.isMainMenuOpen = true), (state.isSecondaryMenuOpen = false);
+    },
+    openSubMenu: state => {
+      (state.isMainMenuOpen = false), (state.isSecondaryMenuOpen = true);
     },
     toggleDropdown: state => {
       state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
@@ -62,6 +71,8 @@ export const {
   toggleDropdown,
   closeSecondaryMenu,
   closeTertiaryMenu,
+  backFromSubMenu,
+  openSubMenu,
   resetMenu,
 } = menuSlice.actions;
 export default menuSlice.reducer;
