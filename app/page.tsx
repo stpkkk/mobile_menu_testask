@@ -1,6 +1,6 @@
 "use client";
 import { Menu } from "@/components";
-import { BurgerMenuIcon } from "@public/icons";
+import { BurgerMenuIcon } from "@public/assets/icons";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { toggleMainMenu } from "@redux/features/menuSlice";
 

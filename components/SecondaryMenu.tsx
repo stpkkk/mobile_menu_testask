@@ -1,13 +1,17 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { toggleTertiaryMenu } from "@redux/features/menuSlice";
-import { ArrowRightIcon } from "@public/icons";
+import { ArrowRightIcon } from "@public/assets/icons";
+import { useTranslation } from "react-i18next";
 
 const SecondaryMenu: React.FC = () => {
   const dispatch = useAppDispatch();
+
   const secondaryMenuItems = useAppSelector(
     state => state.menuReducer.secondaryMenuItems
   );
+
+  const { t } = useTranslation();
 
   const handleSecondaryMenuItemClick = (itemId: number) => {
     const selectedItem = secondaryMenuItems.find(item => item.id === itemId);
@@ -29,7 +33,7 @@ const SecondaryMenu: React.FC = () => {
           onClick={() => handleSecondaryMenuItemClick(item.id)}
         >
           <div className="flex_between">
-            <div>{item.title}</div>
+            <div>{t(item.title)}</div>
             <ArrowRightIcon />
           </div>
         </li>

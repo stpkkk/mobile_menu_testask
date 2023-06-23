@@ -1,8 +1,8 @@
 import React from "react";
-import DropdownMenu from "./DropdownMenu";
-import { CloseIcon } from "@public/icons";
+import { CloseIcon } from "@public/assets/icons";
 import { useAppDispatch } from "@redux/hooks";
 import { resetMenu, toggleMainMenu } from "@redux/features/menuSlice";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 
   return (
     <div className="flex_between mb-5 p-5">
-      <DropdownMenu />
+      <LanguageSwitcher />
       <div className="cursor-pointer" onClick={handleClick}>
         <CloseIcon />
       </div>

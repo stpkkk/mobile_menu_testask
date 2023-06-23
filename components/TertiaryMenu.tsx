@@ -1,10 +1,13 @@
 import React from "react";
 import { useAppSelector } from "@redux/hooks";
+import { useTranslation } from "react-i18next";
 
 const TertiaryMenu: React.FC = () => {
   const tertiaryMenuItems = useAppSelector(
     state => state.menuReducer.tertiaryMenuItems
   );
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -22,10 +25,10 @@ const TertiaryMenu: React.FC = () => {
           >
             <>
               <div className="font-medium text-[16px] leading-6">
-                {item.title}
+                {t(item.title)}
               </div>
               <div className="text-[12px] leading-5 text-gray">
-                {item.content}
+                {t(item.content)}
               </div>
             </>
           </li>

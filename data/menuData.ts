@@ -16,7 +16,7 @@ export const menuData: MenuData = {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -47,68 +47,18 @@ export const menuData: MenuData = {
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
-            {
-              id: 14,
-              title: "MultiCloud",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 15,
-              title: "MultiCloud",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 16,
-              title: "MultiCloud",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 17,
-              title: "MultiCloud",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 18,
-              title: "MultiCloud",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 19,
-              title: "MultiCloud",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 20,
-              title: "MultiCloud",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
           ],
         },
         {
           id: 6,
           title: "Dedicated servers",
-          content: "Содержимое для Dedicated servers",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -144,14 +94,13 @@ export const menuData: MenuData = {
         {
           id: 7,
           title: "Platform services",
-          content: "Содержимое для Platform services",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -187,14 +136,13 @@ export const menuData: MenuData = {
         {
           id: 8,
           title: "Information Security",
-          content: "Содержимое для Information Security",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -243,7 +191,7 @@ export const menuData: MenuData = {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -279,14 +227,13 @@ export const menuData: MenuData = {
         {
           id: 6,
           title: "Dedicated servers",
-          content: "Содержимое для Dedicated servers",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -322,14 +269,13 @@ export const menuData: MenuData = {
         {
           id: 7,
           title: "Platform services",
-          content: "Содержимое для Platform services",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -365,14 +311,13 @@ export const menuData: MenuData = {
         {
           id: 8,
           title: "Information Security",
-          content: "Содержимое для Information Security",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -421,7 +366,7 @@ export const menuData: MenuData = {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -457,14 +402,13 @@ export const menuData: MenuData = {
         {
           id: 6,
           title: "Dedicated servers",
-          content: "Содержимое для Dedicated servers",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -500,14 +444,13 @@ export const menuData: MenuData = {
         {
           id: 7,
           title: "Platform services",
-          content: "Содержимое для Platform services",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -543,14 +486,13 @@ export const menuData: MenuData = {
         {
           id: 8,
           title: "Information Security",
-          content: "Содержимое для Information Security",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -599,7 +541,7 @@ export const menuData: MenuData = {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -635,14 +577,13 @@ export const menuData: MenuData = {
         {
           id: 6,
           title: "Dedicated servers",
-          content: "Содержимое для Dedicated servers",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -678,14 +619,13 @@ export const menuData: MenuData = {
         {
           id: 7,
           title: "Platform services",
-          content: "Содержимое для Platform services",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {
@@ -721,14 +661,13 @@ export const menuData: MenuData = {
         {
           id: 8,
           title: "Information Security",
-          content: "Содержимое для Information Security",
           parentId: 1,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
-                "Relational database services for MySQL, PostgerSQL, and SQL server.",
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
               parentId: 5,
             },
             {

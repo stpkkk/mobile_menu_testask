@@ -1,13 +1,11 @@
-## "Mobile Menu" Frontend-developer Test Task
-
-<a href="https://mobile-menu-testtask.vercel.app/">Live View</a>
+## <a href="https://mobile-menu-testtask.vercel.app/">Mobile Menu</a> Frontend-developer Test Task
 
 ## Technologies Used
 
 - Next.js
 - Redux
 - Tailwind CSS
-- Next-Intl
+- i18next
 - Typescript
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).

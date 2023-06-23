@@ -8,7 +8,7 @@ import TertiaryMenu from "./TertiaryMenu";
 import SecondaryMenu from "./SecondaryMenu";
 import MainMenu from "./MainMenu";
 import Header from "./Header";
-import { ArrowLeftIcon } from "@public/icons";
+import { ArrowLeftIcon } from "@public/assets/icons";
 
 const Menu: React.FC = () => {
   const dispatch = useAppDispatch();
