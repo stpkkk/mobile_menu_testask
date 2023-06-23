@@ -1,3 +1,4 @@
-import { MenuData, MenuItem } from "./menuData";
+import { MenuDataTypes, MenuItemTypes } from "./menuDataTypes";
+import { languageSwitcherTypes } from "./languageSwitcherTypes";
 
-export type { MenuData, MenuItem };
+export type { MenuDataTypes, MenuItemTypes, languageSwitcherTypes };

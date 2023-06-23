@@ -1,6 +1,6 @@
-import { MenuData } from "@types";
+import { MenuDataTypes } from "@types";
 
-export const menuData: MenuData = {
+export const menuData: MenuDataTypes = {
   menuItems: [
     {
       id: 1,
