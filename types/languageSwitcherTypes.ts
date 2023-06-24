@@ -1,5 +1,5 @@
-export interface languageSwitcherTypes {
+export interface LanguageSwitcherTypes {
   code: string;
   name: string;
-  flag: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  flag: string | React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }

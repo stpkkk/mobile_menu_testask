@@ -1,63 +1,71 @@
 import React, { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import {
-  backFromSubMenu,
-  closeTertiaryMenu,
-  toggleTertiaryMenu,
-} from "@redux/features/menuSlice";
-import { ArrowLeftIcon, ArrowRightIcon } from "@public/assets/icons";
+import { openTertiaryMenu } from "@redux/features/menuSlice";
+import { ArrowRightIcon } from "@public/assets/icons";
 import { useTranslation } from "react-i18next";
+import TertiaryMenu from "./TertiaryMenu";
+import BackButton from "./BackButton";
+import { SecondaryMenuItem } from "@types";
 
-const SecondaryMenu: React.FC = ({ items, parentTitle }: any) => {
+type Props = {
+  items: SecondaryMenuItem[];
+  parentTitle: string;
+};
+
+const SecondaryMenu: React.FC<Props> = ({ items, parentTitle }) => {
   const dispatch = useAppDispatch();
+
   const { t } = useTranslation();
 
-  const isSecondaryMenuOpen = useAppSelector(
-    state => state.menuReducer.isSecondaryMenuOpen
+  // const isSecondaryMenuOpen = useAppSelector(
+  //   state => state.menuReducer.isSecondaryMenuOpen
+  // );
+
+  const tertiaryMenuItems = useAppSelector(
+    state => state.menuReducer.secondaryMenuItems[0].tertiaryMenuItems
   );
 
-  useEffect(() => {
-    if (!isSecondaryMenuOpen) {
-      dispatch(closeTertiaryMenu());
-    }
-  }, [isSecondaryMenuOpen, dispatch]);
+  const isTertiaryMenuOpen = useAppSelector(
+    state => state.menuReducer.isTertiaryMenuOpen
+  );
 
-  const handleSecondaryMenuItemClick = (itemId: number) => {
+  // useEffect(() => {
+  //   if (!isSecondaryMenuOpen) {
+  //     dispatch(closeTertiaryMenu());
+  //   }
+  // }, [isSecondaryMenuOpen, dispatch]);
+
+  const handleSecondaryMenuItemClick = (clickedItem: SecondaryMenuItem) => {
     const selectedItem = items.find(
-      (item: { id: number }) => item.id === itemId
-    );
-    if (selectedItem?.tertiaryMenuItems?.length > 0) {
-      dispatch(toggleTertiaryMenu(selectedItem.tertiaryMenuItems));
-    }
-  };
+      (item: { id: number }) => item.id === clickedItem.id
+    ) as SecondaryMenuItem;
 
-  const handleBackClick = () => {
-    dispatch(backFromSubMenu());
+    dispatch(openTertiaryMenu(selectedItem.tertiaryMenuItems));
   };
 
   return (
     <>
-      <button
-        className="flex items-center gap-3 cursor-pointer p-5 bg-transparent border-none outline-none"
-        onClick={handleBackClick}
-      >
-        <ArrowLeftIcon />
-        <p className="text-[22px] leading-[32px]">{t(parentTitle)}</p>
-      </button>
-      <ul>
-        {items.map(item => (
-          <li
-            key={item.id}
-            className="py-3 px-5 mr-5 hover:bg-blue-300 text-[18px] leading-[30px] cursor-pointer"
-            onClick={() => handleSecondaryMenuItemClick(item.id)}
-          >
-            <div className="flex_between">
-              <div>{t(item.title)}</div>
-              <ArrowRightIcon />
-            </div>
-          </li>
-        ))}
-      </ul>
+      {!isTertiaryMenuOpen ? (
+        <>
+          <BackButton name={parentTitle} />
+          <ul>
+            {items.map(item => (
+              <li
+                key={item.id}
+                className="py-3 px-5 mr-5 hover:bg-blue-300 text-[18px] leading-[30px] cursor-pointer"
+                onClick={() => handleSecondaryMenuItemClick(item)}
+              >
+                <div className="flex_between">
+                  <div>{t(item.title)}</div>
+                  <ArrowRightIcon />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <TertiaryMenu items={tertiaryMenuItems} parentTitle={parentTitle} />
+      )}
     </>
   );
 };

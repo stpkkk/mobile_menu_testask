@@ -4,6 +4,7 @@ import SecondaryMenu from "./SecondaryMenu";
 import TertiaryMenu from "./TertiaryMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
 import Menu from "./Menu";
+import BackButton from "./BackButton";
 
 export {
   Menu,
@@ -12,4 +13,5 @@ export {
   TertiaryMenu,
   MainMenu,
   LanguageSwitcher,
+  BackButton,
 };
