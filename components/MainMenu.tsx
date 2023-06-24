@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { ArrowRightIcon } from "@public/assets/icons";
-import { openSubMenu, toggleSecondaryMenu } from "@redux/features/menuSlice";
+import { toggleSecondaryMenu } from "@redux/features/menuSlice";
 import { useTranslation } from "react-i18next";
 import SecondaryMenu from "./SecondaryMenu";
 
-const MainMenu: React.FC = ({ items }: any) => {
+const MainMenu: React.FC = ({ items }) => {
+  const [parentTitle, setParentTitle] = useState("");
+
   const dispatch = useAppDispatch();
+
+  const { t } = useTranslation();
 
   const secondaryMenuItems = useAppSelector(
     state => state.menuReducer.menuItems[0].secondaryMenuItems
@@ -20,43 +24,43 @@ const MainMenu: React.FC = ({ items }: any) => {
     state => state.menuReducer.isMainMenuOpen
   );
 
-  const { t } = useTranslation();
+  const handleMainMenuItemClick = (clickedItem: any) => {
+    const selectedItem = items.find(
+      (item: { id: number }) => item.id === clickedItem.id
+    );
 
-  let parentTitle = "";
-
-  const handleMainMenuItemClick = (item: any) => {
-    dispatch(openSubMenu());
-    parentTitle = item.title;
+    dispatch(toggleSecondaryMenu(selectedItem.secondaryMenuItems));
+    setParentTitle(clickedItem.title);
   };
 
-  console.log(parentTitle);
-
   return (
-    <div className="flex justify-between h-[calc(100vh-8rem)] flex-col">
+    <>
       {isMainMenuOpen && (
-        <ul>
-          {items.map(item => (
-            <li
-              key={item.id}
-              className="font-medium text-[22px] leading-8 cursor-pointer py-3 px-5 mr-5 hover:bg-blue-300"
-              onClick={() => handleMainMenuItemClick(item)}
-            >
-              <div className="flex_between">
-                <div>{t(item.title)}</div>
-                <ArrowRightIcon />
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div className="flex justify-between h-[calc(100vh-8rem)] flex-col">
+          <ul>
+            {items.map((item: MenuItemTypes) => (
+              <li
+                key={item.id}
+                className="font-medium text-[22px] leading-8 cursor-pointer py-3 px-5 mr-5 hover:bg-blue-300"
+                onClick={() => handleMainMenuItemClick(item)}
+              >
+                <div className="flex_between">
+                  <div>{t(item.title)}</div>
+                  <ArrowRightIcon />
+                </div>
+              </li>
+            ))}
+          </ul>
+          <div className="font-medium text-[22px] leading-8 p-5">
+            <div className="py-3 cursor-pointer">{t("Contacts")}</div>
+            <div className="py-3 cursor-pointer">{t("Search")}</div>
+          </div>
+        </div>
       )}
       {isSecondaryMenuOpen && (
         <SecondaryMenu items={secondaryMenuItems} parentTitle={parentTitle} />
       )}
-      <div className="font-medium text-[22px] leading-8 p-5">
-        <div className="py-3 cursor-pointer">{t("Contacts")}</div>
-        <div className="py-3 cursor-pointer">{t("Search")}</div>
-      </div>
-    </div>
+    </>
   );
 };
 

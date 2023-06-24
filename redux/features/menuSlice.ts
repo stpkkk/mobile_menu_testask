@@ -32,20 +32,21 @@ export const menuSlice = createSlice({
     resetMenu: () => initialState,
     toggleMainMenu: state => {
       state.isMenuOpen = !state.isMenuOpen;
-      // state.isMainMenuOpen = true; //!
+      state.isMainMenuOpen = true; //!
     },
     backFromSubMenu: state => {
       (state.isMainMenuOpen = true), (state.isSecondaryMenuOpen = false);
     },
-    openSubMenu: state => {
-      (state.isMainMenuOpen = false), (state.isSecondaryMenuOpen = true);
-    },
+    // openSubMenu: state => {
+    //   (state.isMainMenuOpen = false), (state.isSecondaryMenuOpen = true);
+    // },
     toggleDropdown: state => {
       state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
     },
     toggleSecondaryMenu: (state, action: PayloadAction<MenuItemTypes[]>) => {
       state.secondaryMenuItems = action.payload;
       state.isSecondaryMenuOpen = true;
+      state.isMainMenuOpen = false;
       state.tertiaryMenuItems = [];
       state.isTertiaryMenuOpen = false;
     },
@@ -72,7 +73,6 @@ export const {
   closeSecondaryMenu,
   closeTertiaryMenu,
   backFromSubMenu,
-  openSubMenu,
   resetMenu,
 } = menuSlice.actions;
 export default menuSlice.reducer;
