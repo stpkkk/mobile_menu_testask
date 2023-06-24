@@ -1,53 +1,44 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import { openTertiaryMenu } from "@redux/features/menuSlice";
-import { ArrowRightIcon } from "@public/assets/icons";
+import {
+  openTertiaryMenu,
+  setBackButtonTitle,
+  setSelectedSecondaryMenuItem,
+} from "@redux/features/menuSlice";
 import { useTranslation } from "react-i18next";
+import { ArrowRightIcon } from "@public/assets/icons";
 import TertiaryMenu from "./TertiaryMenu";
 import BackButton from "./BackButton";
 import { SecondaryMenuItem } from "@types";
 
 type Props = {
   items: SecondaryMenuItem[];
-  parentTitle: string;
 };
 
-const SecondaryMenu: React.FC<Props> = ({ items, parentTitle }) => {
+const SecondaryMenu: React.FC<Props> = ({ items }) => {
   const dispatch = useAppDispatch();
-
   const { t } = useTranslation();
-
-  // const isSecondaryMenuOpen = useAppSelector(
-  //   state => state.menuReducer.isSecondaryMenuOpen
-  // );
-
-  const tertiaryMenuItems = useAppSelector(
-    state => state.menuReducer.secondaryMenuItems[0].tertiaryMenuItems
-  );
-
   const isTertiaryMenuOpen = useAppSelector(
     state => state.menuReducer.isTertiaryMenuOpen
   );
-
-  // useEffect(() => {
-  //   if (!isSecondaryMenuOpen) {
-  //     dispatch(closeTertiaryMenu());
-  //   }
-  // }, [isSecondaryMenuOpen, dispatch]);
+  const selectedSecondaryMenuItem = useAppSelector(
+    state => state.menuReducer.selectedSecondaryMenuItem
+  );
 
   const handleSecondaryMenuItemClick = (clickedItem: SecondaryMenuItem) => {
-    const selectedItem = items.find(
-      (item: { id: number }) => item.id === clickedItem.id
-    ) as SecondaryMenuItem;
-
-    dispatch(openTertiaryMenu(selectedItem.tertiaryMenuItems));
+    const selectedItem = items.find(item => item.id === clickedItem.id);
+    if (selectedItem) {
+      dispatch(openTertiaryMenu(selectedItem.tertiaryMenu));
+      dispatch(setBackButtonTitle(clickedItem.title));
+      dispatch(setSelectedSecondaryMenuItem(clickedItem));
+    }
   };
 
   return (
     <>
       {!isTertiaryMenuOpen ? (
         <>
-          <BackButton name={parentTitle} />
+          <BackButton />
           <ul>
             {items.map(item => (
               <li
@@ -64,7 +55,7 @@ const SecondaryMenu: React.FC<Props> = ({ items, parentTitle }) => {
           </ul>
         </>
       ) : (
-        <TertiaryMenu items={tertiaryMenuItems} parentTitle={parentTitle} />
+        <TertiaryMenu items={selectedSecondaryMenuItem?.tertiaryMenu || []} />
       )}
     </>
   );

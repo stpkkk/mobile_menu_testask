@@ -2,23 +2,20 @@ export interface TertiaryMenuItem {
   id: number;
   title: string;
   content: string;
-  parentId: number;
 }
 
 export interface SecondaryMenuItem {
   id: number;
   title: string;
-  parentId: number | null;
-  tertiaryMenuItems: TertiaryMenuItem[];
+  tertiaryMenu: TertiaryMenuItem[];
 }
 
-export interface MenuItem {
+export interface Menu {
   id: number;
   title: string;
-  parentId: number | null;
-  secondaryMenuItems: SecondaryMenuItem[];
+  secondaryMenu: SecondaryMenuItem[];
 }
 
 export interface MenuData {
-  menuItems: MenuItem[];
+  menu: Menu[];
 }

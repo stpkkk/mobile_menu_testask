@@ -1,9 +1,13 @@
-import React, { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { ArrowRightIcon } from "@public/assets/icons";
+import React from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import { openSecondaryMenu } from "@redux/features/menuSlice";
+import {
+  openSecondaryMenu,
+  setBackButtonTitle,
+  setSelectedMainMenuItem,
+} from "@redux/features/menuSlice";
+import { useTranslation } from "react-i18next";
 import SecondaryMenu from "./SecondaryMenu";
+import { ArrowRightIcon } from "@public/assets/icons";
 import { MenuItem } from "@types";
 
 type Props = {
@@ -11,28 +15,26 @@ type Props = {
 };
 
 const MainMenu: React.FC<Props> = ({ items }) => {
-  const [parentTitle, setParentTitle] = useState<string>("");
-
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
-
   const isMainMenuOpen = useAppSelector(
     state => state.menuReducer.isMainMenuOpen
-  );
-
-  const secondaryMenuItems = useAppSelector(
-    state => state.menuReducer.menuItems[0].secondaryMenuItems
   );
 
   const isSecondaryMenuOpen = useAppSelector(
     state => state.menuReducer.isSecondaryMenuOpen
   );
 
+  const selectedMainMenuItem = useAppSelector(
+    state => state.menuReducer.selectedMainMenuItem
+  );
+
   const handleMainMenuItemClick = (clickedItem: MenuItem) => {
     const selectedItem = items.find(item => item.id === clickedItem.id);
     if (selectedItem) {
-      dispatch(openSecondaryMenu(selectedItem.secondaryMenuItems));
-      setParentTitle(clickedItem.title);
+      dispatch(openSecondaryMenu(selectedItem.secondaryMenu));
+      dispatch(setBackButtonTitle(clickedItem.title));
+      dispatch(setSelectedMainMenuItem(clickedItem));
     }
   };
 
@@ -61,7 +63,7 @@ const MainMenu: React.FC<Props> = ({ items }) => {
         </div>
       )}
       {isSecondaryMenuOpen && (
-        <SecondaryMenu items={secondaryMenuItems} parentTitle={parentTitle} />
+        <SecondaryMenu items={selectedMainMenuItem?.secondaryMenu || []} />
       )}
     </>
   );

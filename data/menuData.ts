@@ -1,177 +1,212 @@
 import { MenuData } from "@types";
 
 export const menuData: MenuData = {
-  menuItems: [
+  menu: [
     {
       id: 1,
       title: "Services",
-      parentId: null,
-      secondaryMenuItems: [
+      secondaryMenu: [
         {
           id: 5,
           title: "Cloud computing",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+            },
+            {
+              id: 14,
+              title: "Hybrid Cloud",
+              content:
+                "Data storage, AI, and analytics solutions for government agencies.",
+            },
+            {
+              id: 15,
+              title: "Cloud infrastructure analytics",
+              content:
+                "Health-specific solutions to enhance the patient experience.",
+            },
+            {
+              id: 16,
+              title: "Cloud consulting",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
+            },
+            {
+              id: 17,
+              title: "Hybrid Cloud",
+              content:
+                "Data storage, AI, and analytics solutions for government agencies.",
+            },
+            {
+              id: 18,
+              title: "MultiCloud",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
+            },
+            {
+              id: 19,
+              title: "Hybrid Cloud",
+              content:
+                "Data storage, AI, and analytics solutions for government agencies.",
+            },
+            {
+              id: 20,
+              title: "Cloud infrastructure analytics",
+              content:
+                "Health-specific solutions to enhance the patient experience.",
+            },
+            {
+              id: 21,
+              title: "Cloud consulting",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
+            },
+            {
+              id: 22,
+              title: "Hybrid Cloud",
+              content:
+                "Data storage, AI, and analytics solutions for government agencies.",
+            },
+            {
+              id: 23,
+              title: "MultiCloud",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
           ],
         },
         {
           id: 6,
           title: "Dedicated servers",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Cloud consulting",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
-              title: "MultiCloud",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
           ],
         },
         {
           id: 7,
           title: "Platform services",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Hybrid Cloud",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
         {
           id: 8,
           title: "Information Security",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+            },
+            {
+              id: 10,
+              title: "Cloud consulting",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
@@ -180,173 +215,148 @@ export const menuData: MenuData = {
     {
       id: 2,
       title: "Managed IT",
-      parentId: null,
-      secondaryMenuItems: [
+      secondaryMenu: [
         {
           id: 5,
           title: "Cloud computing",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
         {
           id: 6,
           title: "Dedicated servers",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Cloud consulting",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
-              title: "MultiCloud",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
           ],
         },
         {
           id: 7,
           title: "Platform services",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Hybrid Cloud",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
         {
           id: 8,
           title: "Information Security",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+            },
+            {
+              id: 10,
+              title: "Cloud consulting",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
@@ -355,173 +365,148 @@ export const menuData: MenuData = {
     {
       id: 3,
       title: "Telekom Solutions",
-      parentId: null,
-      secondaryMenuItems: [
+      secondaryMenu: [
         {
           id: 5,
           title: "Cloud computing",
-          parentId: 3,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
         {
           id: 6,
           title: "Dedicated servers",
-          parentId: 3,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 6,
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Cloud consulting",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 6,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 6,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 6,
             },
             {
               id: 13,
-              title: "MultiCloud",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 6,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
           ],
         },
         {
           id: 7,
           title: "Platform services",
-          parentId: 3,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 7,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Hybrid Cloud",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 7,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 7,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 7,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 7,
             },
           ],
         },
         {
           id: 8,
           title: "Information Security",
-          parentId: 3,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 8,
-            },
-            {
-              id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 8,
+            },
+            {
+              id: 10,
+              title: "Cloud consulting",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 8,
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 8,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
@@ -530,173 +515,148 @@ export const menuData: MenuData = {
     {
       id: 4,
       title: "About Us",
-      parentId: null,
-      secondaryMenuItems: [
+      secondaryMenu: [
         {
           id: 5,
           title: "Cloud computing",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
         {
           id: 6,
           title: "Dedicated servers",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Cloud consulting",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
-              title: "MultiCloud",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
           ],
         },
         {
           id: 7,
           title: "Platform services",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
+              title: "Hybrid Cloud",
               content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 10,
-              title: "Cloud infrastructure analytics",
+              title: "Hybrid Cloud",
               content:
-                "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+                "Data storage, AI, and analytics solutions for government agencies.",
             },
             {
               id: 11,
-              title: "Hybrid Cloud",
+              title: "Cloud consulting",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 12,
-              title: "Hybrid Cloud",
+              title: "Cloud infrastructure analytics",
               content:
-                "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+                "Health-specific solutions to enhance the patient experience.",
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },
         {
           id: 8,
           title: "Information Security",
-          parentId: 1,
-          tertiaryMenuItems: [
+          tertiaryMenu: [
             {
               id: 9,
-              title: "Cloud consulting",
-              content:
-                "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
-            },
-            {
-              id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+            },
+            {
+              id: 10,
+              title: "Cloud consulting",
+              content:
+                "Relational database services for MySQL, PostgreSQL, and SQL server.",
             },
             {
               id: 11,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
             },
           ],
         },

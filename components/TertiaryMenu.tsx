@@ -7,10 +7,9 @@ import { TertiaryMenuItem } from "@types";
 
 type Props = {
   items: TertiaryMenuItem[];
-  parentTitle: string;
 };
 
-const TertiaryMenu: React.FC<Props> = ({ items, parentTitle }) => {
+const TertiaryMenu: React.FC<Props> = ({ items }) => {
   const dispatch = useAppDispatch();
 
   const { t } = useTranslation();
@@ -27,7 +26,7 @@ const TertiaryMenu: React.FC<Props> = ({ items, parentTitle }) => {
 
   return (
     <>
-      <BackButton name={parentTitle} />
+      <BackButton />
       <div className="border-b-[1px] border-grayLine opacity-70" />
       <ul
         className={`${

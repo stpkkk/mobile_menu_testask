@@ -4,7 +4,7 @@ import MainMenu from "./MainMenu";
 import Header from "./Header";
 
 const Menu: React.FC = () => {
-  const mainMenuItems = useAppSelector(state => state.menuReducer.menuItems);
+  const mainMenuItems = useAppSelector(state => state.menuReducer.menu);
 
   return (
     <div className="max-w-[360px] w-full">

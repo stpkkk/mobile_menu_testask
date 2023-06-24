@@ -1,21 +1,24 @@
 import React from "react";
 import { backFromSubMenu } from "@redux/features/menuSlice";
-import { useAppDispatch } from "@redux/hooks";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { ArrowLeftIcon } from "@public/assets/icons";
 import { useTranslation } from "react-i18next";
 
-type Props = {
-  name: string;
-};
-
-const BackButton: React.FC<Props> = ({ name }) => {
+const BackButton: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const { t } = useTranslation();
 
   const handleBackClick = () => {
     dispatch(backFromSubMenu());
+    // const selectedItem = items.find(
+    //   (item: { id: number }) => item.id === clickedItem.id
+    // ) as SecondaryMenuItem;
   };
+
+  const buttonTitle = useAppSelector(
+    state => state.menuReducer.backButtonTitle
+  );
 
   return (
     <button
@@ -23,7 +26,7 @@ const BackButton: React.FC<Props> = ({ name }) => {
       onClick={handleBackClick}
     >
       <ArrowLeftIcon />
-      <p className="text-[22px] leading-[32px]">{t(name)}</p>
+      <p className="text-[22px] leading-[32px]">{t(buttonTitle)}</p>
     </button>
   );
 };
