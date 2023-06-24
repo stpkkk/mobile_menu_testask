@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "@redux/hooks";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "./BackButton";
-import { closeSecondaryMenu } from "@redux/features/menuSlice";
 import { TertiaryMenuItem } from "@types";
 
 type Props = {
@@ -10,19 +8,7 @@ type Props = {
 };
 
 const TertiaryMenu: React.FC<Props> = ({ items }) => {
-  const dispatch = useAppDispatch();
-
   const { t } = useTranslation();
-
-  // const isTertiaryMenuOpen = useAppSelector(
-  //   state => state.menuReducer.isTertiaryMenuOpen
-  // );
-
-  // useEffect(() => {
-  //   if (!isTertiaryMenuOpen) {
-  //     dispatch(closeSecondaryMenu());
-  //   }
-  // }, [isTertiaryMenuOpen, dispatch]);
 
   return (
     <>

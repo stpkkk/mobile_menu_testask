@@ -8,10 +8,10 @@ import {
 import { useTranslation } from "react-i18next";
 import SecondaryMenu from "./SecondaryMenu";
 import { ArrowRightIcon } from "@public/assets/icons";
-import { MenuItem } from "@types";
+import { Menu } from "@types";
 
 type Props = {
-  items: MenuItem[];
+  items: Menu[];
 };
 
 const MainMenu: React.FC<Props> = ({ items }) => {
@@ -29,7 +29,7 @@ const MainMenu: React.FC<Props> = ({ items }) => {
     state => state.menuReducer.selectedMainMenuItem
   );
 
-  const handleMainMenuItemClick = (clickedItem: MenuItem) => {
+  const handleMainMenuItemClick = (clickedItem: Menu) => {
     const selectedItem = items.find(item => item.id === clickedItem.id);
     if (selectedItem) {
       dispatch(openSecondaryMenu(selectedItem.secondaryMenu));

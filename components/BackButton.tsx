@@ -11,9 +11,6 @@ const BackButton: React.FC = () => {
 
   const handleBackClick = () => {
     dispatch(backFromSubMenu());
-    // const selectedItem = items.find(
-    //   (item: { id: number }) => item.id === clickedItem.id
-    // ) as SecondaryMenuItem;
   };
 
   const buttonTitle = useAppSelector(
@@ -26,7 +23,7 @@ const BackButton: React.FC = () => {
       onClick={handleBackClick}
     >
       <ArrowLeftIcon />
-      <p className="text-[22px] leading-[32px]">{t(buttonTitle)}</p>
+      <p className="text-start text-[22px] leading-[32px]">{t(buttonTitle)}</p>
     </button>
   );
 };

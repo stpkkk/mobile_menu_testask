@@ -32,7 +32,7 @@ const LanguageSwitcher: React.FC = () => {
         onClick={handleDropdownClick}
       >
         <Image
-          src={languages.find(lang => lang.code === i18n.language)?.flag}
+          src={languages.find(lang => lang.code === i18n.language)?.flag || ""}
           alt="flag"
           width={18}
           height={18}
