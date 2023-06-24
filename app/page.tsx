@@ -5,9 +5,7 @@ import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { toggleMainMenu } from "@redux/features/menuSlice";
 
 export default function Home() {
-  const isMainMenuOpen = useAppSelector(
-    state => state.menuReducer.isMainMenuOpen
-  );
+  const isMenuOpen = useAppSelector(state => state.menuReducer.isMenuOpen);
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
@@ -16,12 +14,12 @@ export default function Home() {
 
   return (
     <main className="max-h-screen">
-      {isMainMenuOpen ? (
+      {isMenuOpen ? (
         <Menu />
       ) : (
         <div
           className={`p-5 duration-1000 transition-all ease-out cursor-pointer ${
-            isMainMenuOpen ? "-translate-x-full" : "translate-x-0"
+            isMenuOpen ? "-translate-x-full" : "translate-x-0"
           }`}
           onClick={handleClick}
         >

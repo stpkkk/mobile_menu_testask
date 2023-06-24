@@ -1,11 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { menuData } from "@data";
-import {
-  MenuData,
-  MenuItem,
-  SecondaryMenuItem,
-  TertiaryMenuItem,
-} from "@types";
+import { MenuDataTypes, MenuItemTypes } from "@types";
 
 type MenuState = {
   isMainMenuOpen: boolean;
@@ -13,10 +8,10 @@ type MenuState = {
   isTertiaryMenuOpen: boolean;
   isDropdownMenuOpen: boolean;
   isMenuOpen: boolean;
-  menuData?: MenuData;
-  secondaryMenuItems: SecondaryMenuItem[];
-  tertiaryMenuItems: TertiaryMenuItem[];
-  menuItems: MenuItem[];
+  menuData?: MenuDataTypes;
+  secondaryMenuItems: MenuItemTypes[];
+  tertiaryMenuItems: MenuItemTypes[];
+  menuItems: MenuItemTypes[];
 };
 
 const initialState: MenuState = {
@@ -45,20 +40,29 @@ export const menuSlice = createSlice({
     toggleDropdown: state => {
       state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
     },
-    openSecondaryMenu: (state, action: PayloadAction<SecondaryMenuItem[]>) => {
+    toggleSecondaryMenu: (state, action: PayloadAction<MenuItemTypes[]>) => {
       state.secondaryMenuItems = action.payload;
       state.isSecondaryMenuOpen = true;
       state.isMainMenuOpen = false;
+      state.tertiaryMenuItems = [];
+    },
+    toggleTertiaryMenu: (state, action: PayloadAction<MenuItemTypes[]>) => {
+      state.tertiaryMenuItems = action.payload;
+      state.isTertiaryMenuOpen = true;
+      // state.isSecondaryMenuOpen = false;
+      // state.secondaryMenuItems = [];
+    },
+    openTertiaryMenu: (state, action: PayloadAction<MenuItemTypes[]>) => {
+      state.tertiaryMenuItems = action.payload;
+      state.isTertiaryMenuOpen = true;
     },
     closeSecondaryMenu: state => {
       state.secondaryMenuItems = [];
       state.isSecondaryMenuOpen = false;
     },
-    openTertiaryMenu: (state, action: PayloadAction<TertiaryMenuItem[]>) => {
-      state.tertiaryMenuItems = action.payload;
-      state.isTertiaryMenuOpen = true;
-      // state.isSecondaryMenuOpen = false;
-      // state.secondaryMenuItems = [];
+    openSecondaryMenu: (state, action: PayloadAction<MenuItemTypes[]>) => {
+      state.secondaryMenuItems = action.payload;
+      state.isSecondaryMenuOpen = true;
     },
     closeTertiaryMenu: state => {
       state.tertiaryMenuItems = [];
@@ -69,7 +73,8 @@ export const menuSlice = createSlice({
 
 export const {
   toggleMainMenu,
-  openSecondaryMenu,
+  toggleSecondaryMenu,
+  toggleTertiaryMenu,
   toggleDropdown,
   closeSecondaryMenu,
   closeTertiaryMenu,

@@ -1,6 +1,6 @@
-import { MenuDataTypes } from "@types";
+import { MenuData } from "@types";
 
-export const menuData: MenuDataTypes = {
+export const menuData: MenuData = {
   menuItems: [
     {
       id: 1,
@@ -360,7 +360,7 @@ export const menuData: MenuDataTypes = {
         {
           id: 5,
           title: "Cloud computing",
-          parentId: 1,
+          parentId: 3,
           tertiaryMenuItems: [
             {
               id: 9,
@@ -402,119 +402,119 @@ export const menuData: MenuDataTypes = {
         {
           id: 6,
           title: "Dedicated servers",
-          parentId: 1,
+          parentId: 3,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+              parentId: 6,
             },
             {
               id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+              parentId: 6,
             },
             {
               id: 11,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+              parentId: 6,
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+              parentId: 6,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+              parentId: 6,
             },
           ],
         },
         {
           id: 7,
           title: "Platform services",
-          parentId: 1,
+          parentId: 3,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+              parentId: 7,
             },
             {
               id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+              parentId: 7,
             },
             {
               id: 11,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+              parentId: 7,
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+              parentId: 7,
             },
             {
               id: 13,
               title: "MultiCloud",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+              parentId: 7,
             },
           ],
         },
         {
           id: 8,
           title: "Information Security",
-          parentId: 1,
+          parentId: 3,
           tertiaryMenuItems: [
             {
               id: 9,
               title: "Cloud consulting",
               content:
                 "Relational database services for MySQL, PostgreSQL, and SQL server.",
-              parentId: 5,
+              parentId: 8,
             },
             {
               id: 10,
               title: "Cloud infrastructure analytics",
               content:
                 "Health-specific solutions to enhance the patient experience.",
-              parentId: 5,
+              parentId: 8,
             },
             {
               id: 11,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+              parentId: 8,
             },
             {
               id: 12,
               title: "Hybrid Cloud",
               content:
                 "Data storage, AI, and analytics solutions for government agencies.",
-              parentId: 5,
+              parentId: 8,
             },
             {
               id: 13,

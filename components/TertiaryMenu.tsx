@@ -1,24 +1,40 @@
-import React from "react";
-import { useAppSelector } from "@redux/hooks";
+import React, { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { useTranslation } from "react-i18next";
+import BackButton from "./BackButton";
+import { closeSecondaryMenu } from "@redux/features/menuSlice";
+import { TertiaryMenuItem } from "@types";
 
-const TertiaryMenu: React.FC = () => {
-  const tertiaryMenuItems = useAppSelector(
-    state => state.menuReducer.tertiaryMenuItems
-  );
+type Props = {
+  items: TertiaryMenuItem[];
+  parentTitle: string;
+};
+
+const TertiaryMenu: React.FC<Props> = ({ items, parentTitle }) => {
+  const dispatch = useAppDispatch();
 
   const { t } = useTranslation();
 
+  // const isTertiaryMenuOpen = useAppSelector(
+  //   state => state.menuReducer.isTertiaryMenuOpen
+  // );
+
+  // useEffect(() => {
+  //   if (!isTertiaryMenuOpen) {
+  //     dispatch(closeSecondaryMenu());
+  //   }
+  // }, [isTertiaryMenuOpen, dispatch]);
+
   return (
     <>
+      <BackButton name={parentTitle} />
       <div className="border-b-[1px] border-grayLine opacity-70" />
       <ul
         className={`${
-          tertiaryMenuItems.length > 8 &&
-          "overflow-y-scroll h-[calc(100vh-10rem)]"
+          items.length > 8 && "overflow-y-scroll h-[calc(100vh-10rem)]"
         }`}
       >
-        {tertiaryMenuItems.map(item => (
+        {items.map((item: TertiaryMenuItem) => (
           <li
             className="cursor-pointer py-3 pl-5 pr-10 hover:bg-blue-300"
             key={item.id}

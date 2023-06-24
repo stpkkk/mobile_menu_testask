@@ -1,12 +1,24 @@
-export interface MenuItemTypes {
+export interface TertiaryMenuItem {
+  id: number;
+  title: string;
+  content: string;
+  parentId: number;
+}
+
+export interface SecondaryMenuItem {
   id: number;
   title: string;
   parentId: number | null;
-  secondaryMenuItems?: MenuItemTypes[];
-  tertiaryMenuItems?: MenuItemTypes[];
-  content?: string;
+  tertiaryMenuItems: TertiaryMenuItem[];
 }
 
-export interface MenuDataTypes {
-  menuItems: MenuItemTypes[];
+export interface MenuItem {
+  id: number;
+  title: string;
+  parentId: number | null;
+  secondaryMenuItems: SecondaryMenuItem[];
+}
+
+export interface MenuData {
+  menuItems: MenuItem[];
 }
