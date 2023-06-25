@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "./BackButton";
 import { TertiaryMenuItem } from "@types";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
+import { backFromSubMenu } from "@redux/features/menuSlice";
 
 type Props = {
   items: TertiaryMenuItem[];
@@ -9,6 +11,8 @@ type Props = {
 
 const TertiaryMenu: React.FC<Props> = ({ items }) => {
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+
   const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,14 +22,23 @@ const TertiaryMenu: React.FC<Props> = ({ items }) => {
       menuDiv.classList.add("border-t-[1px]");
       menuDiv.classList.add("border-grayLine");
       menuDiv.classList.add("opacity-70");
-    } else {
-      menuDiv?.classList.remove("overflow-y-scroll");
     }
   }, []);
 
+  const backButtonTitleTertiary = useAppSelector(
+    state => state.menuReducer.backButtonTitleTertiary
+  );
+
+  const handleBackClick = () => {
+    dispatch(backFromSubMenu());
+  };
+
   return (
     <>
-      <BackButton />
+      <BackButton
+        handleClick={handleBackClick}
+        name={backButtonTitleTertiary}
+      />
       <div className="flex flex-col" ref={menuRef}>
         <ul className="h-[calc(100vh-10.5rem)]">
           {items.map((item: TertiaryMenuItem) => (

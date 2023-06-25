@@ -1,15 +1,16 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import {
+  backFromSubMenu,
   openTertiaryMenu,
-  setBackButtonTitle,
+  setBackButtonTitleTertiary,
   setSelectedSecondaryMenuItem,
 } from "@redux/features/menuSlice";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@public/assets/icons";
 import TertiaryMenu from "./TertiaryMenu";
-import BackButton from "./BackButton";
 import { SecondaryMenuItem } from "@types";
+import BackButton from "./BackButton";
 
 type Props = {
   items: SecondaryMenuItem[];
@@ -25,20 +26,33 @@ const SecondaryMenu: React.FC<Props> = ({ items }) => {
     state => state.menuReducer.selectedSecondaryMenuItem
   );
 
+  const backButtonTitleTertiary = useAppSelector(
+    state => state.menuReducer.backButtonTitleTertiary
+  );
+
+  const backButtonTitle = useAppSelector(
+    state => state.menuReducer.backButtonTitle
+  );
+
   const handleSecondaryMenuItemClick = (clickedItem: SecondaryMenuItem) => {
     const selectedItem = items.find(item => item.id === clickedItem.id);
     if (selectedItem) {
       dispatch(openTertiaryMenu(selectedItem.tertiaryMenu));
-      dispatch(setBackButtonTitle(clickedItem.title));
+      dispatch(setBackButtonTitleTertiary(clickedItem.title));
       dispatch(setSelectedSecondaryMenuItem(clickedItem));
     }
+  };
+
+  const handleBackClick = () => {
+    dispatch(backFromSubMenu());
+    dispatch(setBackButtonTitleTertiary(backButtonTitleTertiary));
   };
 
   return (
     <>
       {!isTertiaryMenuOpen ? (
         <>
-          <BackButton />
+          <BackButton handleClick={handleBackClick} name={backButtonTitle} />
           <ul>
             {items.map(item => (
               <li

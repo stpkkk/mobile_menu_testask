@@ -12,6 +12,7 @@ interface MenuState {
   tertiaryMenu: TertiaryMenuItem[];
   menu: Menu[];
   backButtonTitle: string;
+  backButtonTitleTertiary: string;
   selectedSecondaryMenuItem?: SecondaryMenuItem | null;
   selectedMainMenuItem?: Menu | null;
   menuData?: MenuData;
@@ -26,6 +27,7 @@ const initialState: MenuState = {
   secondaryMenu: [],
   tertiaryMenu: [],
   backButtonTitle: "",
+  backButtonTitleTertiary: "",
   selectedSecondaryMenuItem: null,
   selectedMainMenuItem: null,
   ...menuData,
@@ -72,6 +74,9 @@ const menuSlice = createSlice({
     setBackButtonTitle: (state, action: PayloadAction<string>) => {
       state.backButtonTitle = action.payload;
     },
+    setBackButtonTitleTertiary: (state, action: PayloadAction<string>) => {
+      state.backButtonTitleTertiary = action.payload;
+    },
     setSelectedSecondaryMenuItem: (
       state,
       action: PayloadAction<SecondaryMenuItem>
@@ -94,6 +99,7 @@ export const {
   resetMenu,
   openTertiaryMenu,
   setBackButtonTitle,
+  setBackButtonTitleTertiary,
   setSelectedSecondaryMenuItem,
   setSelectedMainMenuItem,
 } = menuSlice.actions;
