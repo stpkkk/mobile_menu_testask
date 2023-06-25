@@ -2,14 +2,14 @@
 import { Menu } from "@/components";
 import { BurgerMenuIcon } from "@public/assets/icons";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
-import { toggleMainMenu } from "@redux/features/menuSlice";
+import { toggleMenu } from "@redux/features/menuSlice";
 
 export default function Home() {
   const isMenuOpen = useAppSelector(state => state.menuReducer.isMenuOpen);
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    dispatch(toggleMainMenu());
+    dispatch(toggleMenu());
   };
 
   return (

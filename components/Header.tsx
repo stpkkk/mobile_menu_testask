@@ -1,14 +1,14 @@
 import React from "react";
 import { CloseIcon } from "@public/assets/icons";
 import { useAppDispatch } from "@redux/hooks";
-import { resetMenu, toggleMainMenu } from "@redux/features/menuSlice";
+import { resetMenu, toggleMenu } from "@redux/features/menuSlice";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Header: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    dispatch(toggleMainMenu());
+    dispatch(toggleMenu());
     dispatch(resetMenu());
   };
 

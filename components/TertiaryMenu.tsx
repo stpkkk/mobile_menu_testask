@@ -25,8 +25,8 @@ const TertiaryMenu: React.FC<Props> = ({ items }) => {
     }
   }, []);
 
-  const backButtonTitleTertiary = useAppSelector(
-    state => state.menuReducer.backButtonTitleTertiary
+  const tertiaryMenuTitle = useAppSelector(
+    state => state.menuReducer.tertiaryMenuTitle
   );
 
   const handleBackClick = () => {
@@ -35,10 +35,7 @@ const TertiaryMenu: React.FC<Props> = ({ items }) => {
 
   return (
     <>
-      <BackButton
-        handleClick={handleBackClick}
-        name={backButtonTitleTertiary}
-      />
+      <BackButton handleClick={handleBackClick} name={tertiaryMenuTitle} />
       <div className="flex flex-col" ref={menuRef}>
         <ul className="h-[calc(100vh-10.5rem)]">
           {items.map((item: TertiaryMenuItem) => (

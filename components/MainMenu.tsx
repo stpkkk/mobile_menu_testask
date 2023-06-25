@@ -2,8 +2,8 @@ import React from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import {
   openSecondaryMenu,
-  setBackButtonTitle,
-  setSelectedMainMenuItem,
+  setSecondaryMenuTitle,
+  setMainMenuItems,
 } from "@redux/features/menuSlice";
 import { useTranslation } from "react-i18next";
 import SecondaryMenu from "./SecondaryMenu";
@@ -25,16 +25,16 @@ const MainMenu: React.FC<Props> = ({ items }) => {
     state => state.menuReducer.isSecondaryMenuOpen
   );
 
-  const selectedMainMenuItem = useAppSelector(
-    state => state.menuReducer.selectedMainMenuItem
+  const mainMenuItems = useAppSelector(
+    state => state.menuReducer.mainMenuItems
   );
 
   const handleMainMenuItemClick = (clickedItem: Menu) => {
     const selectedItem = items.find(item => item.id === clickedItem.id);
     if (selectedItem) {
       dispatch(openSecondaryMenu(selectedItem.secondaryMenu));
-      dispatch(setBackButtonTitle(clickedItem.title));
-      dispatch(setSelectedMainMenuItem(clickedItem));
+      dispatch(setSecondaryMenuTitle(clickedItem.title));
+      dispatch(setMainMenuItems(clickedItem));
     }
   };
 
@@ -63,7 +63,7 @@ const MainMenu: React.FC<Props> = ({ items }) => {
         </div>
       )}
       {isSecondaryMenuOpen && (
-        <SecondaryMenu items={selectedMainMenuItem?.secondaryMenu || []} />
+        <SecondaryMenu items={mainMenuItems?.secondaryMenu || []} />
       )}
     </>
   );

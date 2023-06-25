@@ -3,8 +3,8 @@ import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import {
   backFromSubMenu,
   openTertiaryMenu,
-  setBackButtonTitleTertiary,
-  setSelectedSecondaryMenuItem,
+  setTertiaryMenuTitle,
+  setSecondaryMenuItems,
 } from "@redux/features/menuSlice";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@public/assets/icons";
@@ -22,37 +22,37 @@ const SecondaryMenu: React.FC<Props> = ({ items }) => {
   const isTertiaryMenuOpen = useAppSelector(
     state => state.menuReducer.isTertiaryMenuOpen
   );
-  const selectedSecondaryMenuItem = useAppSelector(
-    state => state.menuReducer.selectedSecondaryMenuItem
+  const secondaryMenuItems = useAppSelector(
+    state => state.menuReducer.secondaryMenuItems
   );
 
-  const backButtonTitleTertiary = useAppSelector(
-    state => state.menuReducer.backButtonTitleTertiary
+  const tertiaryMenuTitle = useAppSelector(
+    state => state.menuReducer.tertiaryMenuTitle
   );
 
-  const backButtonTitle = useAppSelector(
-    state => state.menuReducer.backButtonTitle
+  const secondaryMenuTitle = useAppSelector(
+    state => state.menuReducer.secondaryMenuTitle
   );
 
   const handleSecondaryMenuItemClick = (clickedItem: SecondaryMenuItem) => {
     const selectedItem = items.find(item => item.id === clickedItem.id);
     if (selectedItem) {
       dispatch(openTertiaryMenu(selectedItem.tertiaryMenu));
-      dispatch(setBackButtonTitleTertiary(clickedItem.title));
-      dispatch(setSelectedSecondaryMenuItem(clickedItem));
+      dispatch(setTertiaryMenuTitle(clickedItem.title));
+      dispatch(setSecondaryMenuItems(clickedItem));
     }
   };
 
   const handleBackClick = () => {
     dispatch(backFromSubMenu());
-    dispatch(setBackButtonTitleTertiary(backButtonTitleTertiary));
+    dispatch(setTertiaryMenuTitle(tertiaryMenuTitle));
   };
 
   return (
     <>
       {!isTertiaryMenuOpen ? (
         <>
-          <BackButton handleClick={handleBackClick} name={backButtonTitle} />
+          <BackButton handleClick={handleBackClick} name={secondaryMenuTitle} />
           <ul>
             {items.map(item => (
               <li
@@ -69,7 +69,7 @@ const SecondaryMenu: React.FC<Props> = ({ items }) => {
           </ul>
         </>
       ) : (
-        <TertiaryMenu items={selectedSecondaryMenuItem?.tertiaryMenu || []} />
+        <TertiaryMenu items={secondaryMenuItems?.tertiaryMenu || []} />
       )}
     </>
   );
