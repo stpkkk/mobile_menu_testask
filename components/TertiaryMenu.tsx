@@ -1,15 +1,13 @@
+"use client";
+
 import React, { useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import BackButton from "./BackButton";
-import { TertiaryMenuItem } from "@types";
+import { TertiaryMenuItems } from "@types";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import { backFromSubMenu } from "@redux/features/menuSlice";
 
-type Props = {
-  items: TertiaryMenuItem[];
-};
-
-const TertiaryMenu: React.FC<Props> = ({ items }) => {
+const TertiaryMenu: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
@@ -29,6 +27,10 @@ const TertiaryMenu: React.FC<Props> = ({ items }) => {
     state => state.menuReducer.tertiaryMenuTitle
   );
 
+  const secondaryMenuItems = useAppSelector(
+    state => state.menuReducer.secondaryMenuItems
+  );
+
   const handleBackClick = () => {
     dispatch(backFromSubMenu());
   };
@@ -38,7 +40,7 @@ const TertiaryMenu: React.FC<Props> = ({ items }) => {
       <BackButton handleClick={handleBackClick} name={tertiaryMenuTitle} />
       <div className="flex flex-col" ref={menuRef}>
         <ul className="h-[calc(100vh-10.5rem)]">
-          {items.map((item: TertiaryMenuItem) => (
+          {secondaryMenuItems?.tertiaryMenu.map((item: TertiaryMenuItems) => (
             <li
               className="cursor-pointer py-3 pl-5 pr-10 hover:bg-blue-300"
               key={item.id}

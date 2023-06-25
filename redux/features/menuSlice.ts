@@ -1,6 +1,27 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { menuData } from "@data";
-import { Menu, SecondaryMenuItem, TertiaryMenuItem, MenuState } from "@types";
+import {
+  MainMenu,
+  MenuData,
+  SecondaryMenuItems,
+  TertiaryMenuItems,
+} from "@types";
+
+export interface MenuState {
+  isMainMenuOpen: boolean;
+  isSecondaryMenuOpen: boolean;
+  isTertiaryMenuOpen: boolean;
+  isDropdownMenuOpen: boolean;
+  isMenuOpen: boolean;
+  secondaryMenu: SecondaryMenuItems[];
+  tertiaryMenuItems: TertiaryMenuItems[];
+  menu: MainMenu[];
+  secondaryMenuTitle: string;
+  tertiaryMenuTitle: string;
+  secondaryMenuItems?: SecondaryMenuItems | null;
+  mainMenuItems?: MainMenu | null;
+  menuData?: MenuData;
+}
 
 const initialState: MenuState = {
   isMainMenuOpen: false,
@@ -9,7 +30,7 @@ const initialState: MenuState = {
   isDropdownMenuOpen: false,
   isMenuOpen: false,
   secondaryMenu: [],
-  tertiaryMenu: [],
+  tertiaryMenuItems: [],
   secondaryMenuTitle: "",
   tertiaryMenuTitle: "",
   secondaryMenuItems: null,
@@ -27,7 +48,7 @@ const menuSlice = createSlice({
       state.isMenuOpen = !state.isMenuOpen;
       state.isMainMenuOpen = true;
     },
-    openSecondaryMenu: (state, action: PayloadAction<SecondaryMenuItem[]>) => {
+    openSecondaryMenu: (state, action: PayloadAction<SecondaryMenuItems[]>) => {
       state.secondaryMenu = action.payload;
       state.isSecondaryMenuOpen = true;
       state.isMainMenuOpen = false;
@@ -36,25 +57,25 @@ const menuSlice = createSlice({
       state.secondaryMenu = [];
       state.isSecondaryMenuOpen = false;
     },
-    openTertiaryMenu: (state, action: PayloadAction<TertiaryMenuItem[]>) => {
-      state.tertiaryMenu = action.payload;
+    openTertiaryMenu: (state, action: PayloadAction<TertiaryMenuItems[]>) => {
+      state.tertiaryMenuItems = action.payload;
       state.isTertiaryMenuOpen = true;
     },
     closeTertiaryMenu: state => {
-      state.tertiaryMenu = [];
+      state.tertiaryMenuItems = [];
       state.isTertiaryMenuOpen = false;
     },
     toggleDropdown: state => {
       state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
     },
     //Set Menu Items
-    setSecondaryMenuItems: (
+    selectedSecondaryMenu: (
       state,
-      action: PayloadAction<SecondaryMenuItem>
+      action: PayloadAction<SecondaryMenuItems>
     ) => {
       state.secondaryMenuItems = action.payload;
     },
-    setMainMenuItems: (state, action: PayloadAction<Menu>) => {
+    selectedMainMenu: (state, action: PayloadAction<MainMenu>) => {
       state.mainMenuItems = action.payload;
     },
     //Back Button
@@ -87,8 +108,8 @@ export const {
   openTertiaryMenu,
   setSecondaryMenuTitle,
   setTertiaryMenuTitle,
-  setSecondaryMenuItems,
-  setMainMenuItems,
+  selectedSecondaryMenu,
+  selectedMainMenu,
 } = menuSlice.actions;
 
 export default menuSlice.reducer;

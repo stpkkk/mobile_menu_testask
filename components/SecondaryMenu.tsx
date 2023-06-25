@@ -4,26 +4,19 @@ import {
   backFromSubMenu,
   openTertiaryMenu,
   setTertiaryMenuTitle,
-  setSecondaryMenuItems,
+  selectedSecondaryMenu,
 } from "@redux/features/menuSlice";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@public/assets/icons";
 import TertiaryMenu from "./TertiaryMenu";
-import { SecondaryMenuItem } from "@types";
+import { SecondaryMenuItems } from "@types";
 import BackButton from "./BackButton";
 
-type Props = {
-  items: SecondaryMenuItem[];
-};
-
-const SecondaryMenu: React.FC<Props> = ({ items }) => {
+const SecondaryMenu: React.FC = () => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
   const isTertiaryMenuOpen = useAppSelector(
     state => state.menuReducer.isTertiaryMenuOpen
-  );
-  const secondaryMenuItems = useAppSelector(
-    state => state.menuReducer.secondaryMenuItems
   );
 
   const tertiaryMenuTitle = useAppSelector(
@@ -34,12 +27,18 @@ const SecondaryMenu: React.FC<Props> = ({ items }) => {
     state => state.menuReducer.secondaryMenuTitle
   );
 
-  const handleSecondaryMenuItemClick = (clickedItem: SecondaryMenuItem) => {
-    const selectedItem = items.find(item => item.id === clickedItem.id);
+  const mainMenuItems = useAppSelector(
+    state => state.menuReducer.mainMenuItems
+  );
+
+  const handleSecondaryMenuItemClick = (clickedItem: SecondaryMenuItems) => {
+    const selectedItem = mainMenuItems?.secondaryMenu.find(
+      item => item.id === clickedItem.id
+    );
     if (selectedItem) {
       dispatch(openTertiaryMenu(selectedItem.tertiaryMenu));
       dispatch(setTertiaryMenuTitle(clickedItem.title));
-      dispatch(setSecondaryMenuItems(clickedItem));
+      dispatch(selectedSecondaryMenu(clickedItem));
     }
   };
 
@@ -54,7 +53,7 @@ const SecondaryMenu: React.FC<Props> = ({ items }) => {
         <>
           <BackButton handleClick={handleBackClick} name={secondaryMenuTitle} />
           <ul>
-            {items.map(item => (
+            {mainMenuItems?.secondaryMenu.map(item => (
               <li
                 key={item.id}
                 className="py-3 px-5 mr-5 hover:bg-blue-300 text-[18px] leading-[30px] cursor-pointer"
@@ -69,7 +68,7 @@ const SecondaryMenu: React.FC<Props> = ({ items }) => {
           </ul>
         </>
       ) : (
-        <TertiaryMenu items={secondaryMenuItems?.tertiaryMenu || []} />
+        <TertiaryMenu />
       )}
     </>
   );

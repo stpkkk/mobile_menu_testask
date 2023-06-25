@@ -1,21 +1,21 @@
-export interface TertiaryMenuItem {
+export interface TertiaryMenuItems {
   id: number;
   title: string;
   content: string;
 }
 
-export interface SecondaryMenuItem {
+export interface SecondaryMenuItems {
   id: number;
   title: string;
-  tertiaryMenu: TertiaryMenuItem[];
+  tertiaryMenu: TertiaryMenuItems[];
 }
 
-export interface Menu {
+export interface MainMenu {
   id: number;
   title: string;
-  secondaryMenu: SecondaryMenuItem[];
+  secondaryMenu: SecondaryMenuItems[];
 }
 
 export interface MenuData {
-  menu: Menu[];
+  menu: MainMenu[];
 }

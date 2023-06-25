@@ -1,15 +1,37 @@
+"use client";
+
 import React from "react";
-import { useAppSelector } from "@redux/hooks";
+import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import MainMenu from "./MainMenu";
 import Header from "./Header";
+import { toggleMenu } from "@redux/features/menuSlice";
+import { BurgerMenuIcon } from "@public/assets/icons";
 
 const Menu: React.FC = () => {
-  const mainMenuItems = useAppSelector(state => state.menuReducer.menu);
+  const isMenuOpen = useAppSelector(state => state.menuReducer.isMenuOpen);
+  const dispatch = useAppDispatch();
+
+  const handleClick = () => {
+    dispatch(toggleMenu());
+  };
 
   return (
     <div className="max-w-[360px] w-full">
-      <Header />
-      <MainMenu items={mainMenuItems} />
+      {isMenuOpen ? (
+        <>
+          <Header />
+          <MainMenu />
+        </>
+      ) : (
+        <div
+          className={`p-5 duration-1000 transition-all ease-out cursor-pointer ${
+            isMenuOpen ? "-translate-x-full" : "translate-x-0"
+          }`}
+          onClick={handleClick}
+        >
+          <BurgerMenuIcon />
+        </div>
+      )}
     </div>
   );
 };
