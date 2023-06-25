@@ -9,21 +9,19 @@ import { languages } from "@data/languageSwitcher";
 const LanguageSwitcher: React.FC = () => {
   const dispatch = useAppDispatch();
   const { i18n, t } = useTranslation();
+  const isOpen = useAppSelector(state => state.menuReducer.isDropdownMenuOpen);
+  const languageCode = languages.find(
+    lang => lang.code === i18n.language
+  )?.code;
 
   const handleChangeLanguage = (language: string | undefined) => {
     i18n.changeLanguage(language);
     dispatch(toggleDropdown());
   };
 
-  const isOpen = useAppSelector(state => state.menuReducer.isDropdownMenuOpen);
-
   const handleDropdownClick = () => {
     dispatch(toggleDropdown());
   };
-
-  const languageCode = languages.find(
-    lang => lang.code === i18n.language
-  )?.code;
 
   return (
     <div className="text-[14px] leading-[24px]">
@@ -41,11 +39,7 @@ const LanguageSwitcher: React.FC = () => {
           {languageCode &&
             languageCode.charAt(0).toUpperCase() + languageCode.slice(1)}
         </div>
-        {isOpen ? (
-          <ArrowDownIcon color="#1D7DED" />
-        ) : (
-          <ArrowDownIcon color="#849BAF" />
-        )}
+        <ArrowDownIcon color={isOpen ? "#1D7DED" : "#849BAF"} />
       </div>
       {isOpen && (
         <div className="absolute z-30 w-[180px] bg-white shadow-lg pt-3">
@@ -61,7 +55,7 @@ const LanguageSwitcher: React.FC = () => {
                 <div className="flex_between gap-2">
                   <Image src={flag} alt={name} width={16} height={16} />
                   <div className="mr-auto">{name}</div>
-                  <div>{i18n.language === code && <CheckIcon />}</div>
+                  {i18n.language === code && <CheckIcon />}
                 </div>
               </li>
             ))}

@@ -68,7 +68,6 @@ const menuSlice = createSlice({
     toggleDropdown: state => {
       state.isDropdownMenuOpen = !state.isDropdownMenuOpen;
     },
-    //Set Menu Items
     selectedSecondaryMenu: (
       state,
       action: PayloadAction<SecondaryMenuItems>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import {
   backFromSubMenu,
@@ -6,7 +7,6 @@ import {
   setTertiaryMenuTitle,
   selectedSecondaryMenu,
 } from "@redux/features/menuSlice";
-import { useTranslation } from "react-i18next";
 import { ArrowRightIcon } from "@public/assets/icons";
 import TertiaryMenu from "./TertiaryMenu";
 import { SecondaryMenuItems } from "@types";
@@ -15,21 +15,12 @@ import BackButton from "./BackButton";
 const SecondaryMenu: React.FC = () => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
-  const isTertiaryMenuOpen = useAppSelector(
-    state => state.menuReducer.isTertiaryMenuOpen
-  );
-
-  const tertiaryMenuTitle = useAppSelector(
-    state => state.menuReducer.tertiaryMenuTitle
-  );
-
-  const secondaryMenuTitle = useAppSelector(
-    state => state.menuReducer.secondaryMenuTitle
-  );
-
-  const mainMenuItems = useAppSelector(
-    state => state.menuReducer.mainMenuItems
-  );
+  const {
+    isTertiaryMenuOpen,
+    tertiaryMenuTitle,
+    secondaryMenuTitle,
+    mainMenuItems,
+  } = useAppSelector(state => state.menuReducer);
 
   const handleSecondaryMenuItemClick = (clickedItem: SecondaryMenuItems) => {
     const selectedItem = mainMenuItems?.secondaryMenu.find(

@@ -1,11 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import {
   openSecondaryMenu,
   setSecondaryMenuTitle,
   selectedMainMenu,
 } from "@redux/features/menuSlice";
-import { useTranslation } from "react-i18next";
 import SecondaryMenu from "./SecondaryMenu";
 import { ArrowRightIcon } from "@public/assets/icons";
 import { MainMenu } from "@types";
@@ -13,15 +13,9 @@ import { MainMenu } from "@types";
 const MainMenu: React.FC = () => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
-  const isMainMenuOpen = useAppSelector(
-    state => state.menuReducer.isMainMenuOpen
+  const { isMainMenuOpen, isSecondaryMenuOpen, menu } = useAppSelector(
+    state => state.menuReducer
   );
-
-  const isSecondaryMenuOpen = useAppSelector(
-    state => state.menuReducer.isSecondaryMenuOpen
-  );
-
-  const menu = useAppSelector(state => state.menuReducer.menu);
 
   const handleMainMenuItemClick = (clickedItem: MainMenu) => {
     const selectedItem = menu.find(item => item.id === clickedItem.id);

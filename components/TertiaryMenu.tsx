@@ -10,6 +10,12 @@ import { backFromSubMenu } from "@redux/features/menuSlice";
 const TertiaryMenu: React.FC = () => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const tertiaryMenuTitle = useAppSelector(
+    state => state.menuReducer.tertiaryMenuTitle
+  );
+  const secondaryMenuItems = useAppSelector(
+    state => state.menuReducer.secondaryMenuItems
+  );
 
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -22,14 +28,6 @@ const TertiaryMenu: React.FC = () => {
       menuDiv.classList.add("opacity-70");
     }
   }, []);
-
-  const tertiaryMenuTitle = useAppSelector(
-    state => state.menuReducer.tertiaryMenuTitle
-  );
-
-  const secondaryMenuItems = useAppSelector(
-    state => state.menuReducer.secondaryMenuItems
-  );
 
   const handleBackClick = () => {
     dispatch(backFromSubMenu());

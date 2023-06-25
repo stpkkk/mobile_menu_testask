@@ -2,7 +2,10 @@ import React from "react";
 import { ArrowLeftIcon } from "@public/assets/icons";
 import { useTranslation } from "react-i18next";
 
-type Props = { handleClick: () => void; name: string };
+type Props = {
+  handleClick: () => void;
+  name: string;
+};
 
 const BackButton: React.FC<Props> = ({ handleClick, name }) => {
   const { t } = useTranslation();
