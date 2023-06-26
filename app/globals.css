@@ -26,6 +26,18 @@
   color: #151617;
 }
 
+.menu {
+  @apply fixed inset-y-0 left-0 z-50 flex flex-col w-[360px] bg-white shadow-xl transform-gpu transition-transform duration-500 ease-in-out;
+}
+
+.list_item {
+  @apply hover:bg-blue hover:shadow-[#D3D3D3] hover:shadow-xl transition-all cursor-pointer py-3 pl-5;
+}
+
+.btn-focus {
+  @apply bg-blue bg-opacity-50 rounded-sm border-[2px] border-blueBorder border-opacity-10;
+}
+
 /* FLEX */
 .flex_center {
   @apply flex justify-center items-center;

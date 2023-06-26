@@ -15,7 +15,10 @@ const Header: React.FC = () => {
   return (
     <div className="flex_between mb-5 p-5">
       <LanguageSwitcher />
-      <div className="cursor-pointer" onClick={handleClick}>
+      <div
+        className="cursor-pointer hover:shadow-xl transition-shadow p-2 rounded-lg hover:bg-red-500"
+        onClick={handleClick}
+      >
         <CloseIcon />
       </div>
     </div>

@@ -26,7 +26,9 @@ const LanguageSwitcher: React.FC = () => {
   return (
     <div className="text-[14px] leading-[24px]">
       <div
-        className="flex_center gap-2 cursor-pointer"
+        className={`flex_center gap-2 w-[96px] h-[32px] p-2 cursor-pointer ${
+          isOpen && "btn-focus"
+        }`}
         onClick={handleDropdownClick}
       >
         <Image
@@ -47,7 +49,7 @@ const LanguageSwitcher: React.FC = () => {
           <ul>
             {languages.map(({ code, name, flag }) => (
               <li
-                className="px-5 py-2 hover:bg-blue-300 cursor-pointer"
+                className="list_item pr-5 py-2"
                 value={code}
                 key={code}
                 onClick={() => handleChangeLanguage(code)}

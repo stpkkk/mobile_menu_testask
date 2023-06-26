@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@redux/hooks";
 import MainMenu from "./MainMenu";
 import Header from "./Header";
@@ -14,18 +14,27 @@ const Menu: React.FC = () => {
     dispatch(toggleMenu());
   };
 
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
   return (
     <div className="max-w-[360px] w-full">
-      {isMenuOpen ? (
-        <>
+      {hydrated && (
+        <div
+          onClick={e => e.stopPropagation()}
+          className={`menu ${
+            isMenuOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
+        >
           <Header />
           <MainMenu />
-        </>
-      ) : (
+        </div>
+      )}
+      {!isMenuOpen && (
         <div
-          className={`p-5 duration-1000 transition-all ease-out cursor-pointer ${
-            isMenuOpen ? "-translate-x-full" : "translate-x-0"
-          }`}
+          className="fixed z-40 m-3 p-3 duration-300 rounded-lg transition-shadow cursor-pointer hover:shadow-xl"
           onClick={handleClick}
         >
           <BurgerMenuIcon />

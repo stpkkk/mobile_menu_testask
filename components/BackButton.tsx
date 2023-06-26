@@ -12,8 +12,9 @@ const BackButton: React.FC<Props> = ({ handleClick, name }) => {
 
   return (
     <button
-      className="flex items-center gap-3 cursor-pointer p-5 bg-transparent border-none outline-none"
+      className="flex items-center gap-3 list_item bg-transparent border-none outline-none"
       onClick={handleClick}
+      type="button"
     >
       <ArrowLeftIcon />
       <p className="text-start text-[22px] leading-[32px]">{t(name)}</p>

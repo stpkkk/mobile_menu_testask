@@ -47,7 +47,7 @@ const SecondaryMenu: React.FC = () => {
             {mainMenuItems?.secondaryMenu.map(item => (
               <li
                 key={item.id}
-                className="py-3 px-5 mr-5 hover:bg-blue-300 text-[18px] leading-[30px] cursor-pointer"
+                className="text-[18px] leading-[30px] list_item pr-10"
                 onClick={() => handleSecondaryMenuItemClick(item)}
               >
                 <div className="flex_between">

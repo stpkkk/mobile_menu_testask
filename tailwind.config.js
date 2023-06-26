@@ -16,6 +16,8 @@ module.exports = {
         gray: "#577188",
         grayLine: "#C6D6E5",
         listItemHover: "#F1F8FE",
+        blue: "#83BCFF",
+        blueBorder: "#1D7DED",
       },
     },
   },

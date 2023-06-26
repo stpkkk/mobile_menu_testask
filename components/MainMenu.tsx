@@ -29,16 +29,18 @@ const MainMenu: React.FC = () => {
   return (
     <>
       {isMainMenuOpen && (
-        <div className="flex justify-between h-[calc(100vh-8rem)] flex-col">
+        <div className="flex flex-col justify-between h-[calc(100vh-8rem)] ">
           <ul>
             {menu.map(item => (
               <li
                 key={item.id}
-                className="font-medium text-[22px] leading-8 cursor-pointer py-3 px-5 mr-5 hover:bg-blue-300"
+                className="font-medium text-[22px] list_item pr-10"
                 onClick={() => handleMainMenuItemClick(item)}
               >
-                <div className="flex items-center justify-between">
-                  <div>{t(item.title)}</div>
+                <div className="flex_between">
+                  <div className="break-words max-w-[270px]">
+                    {t(item.title)}
+                  </div>
                   <ArrowRightIcon />
                 </div>
               </li>

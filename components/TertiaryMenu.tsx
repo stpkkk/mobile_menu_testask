@@ -25,7 +25,7 @@ const TertiaryMenu: React.FC = () => {
       menuDiv.classList.add("overflow-y-scroll");
       menuDiv.classList.add("border-t-[1px]");
       menuDiv.classList.add("border-grayLine");
-      menuDiv.classList.add("opacity-70");
+      menuDiv.classList.add("border-opacity-70");
     }
   }, []);
 
@@ -37,12 +37,9 @@ const TertiaryMenu: React.FC = () => {
     <>
       <BackButton handleClick={handleBackClick} name={tertiaryMenuTitle} />
       <div className="flex flex-col" ref={menuRef}>
-        <ul className="h-[calc(100vh-10.5rem)]">
+        <ul className="h-[calc(100vh-9rem)]">
           {secondaryMenuItems?.tertiaryMenu.map((item: TertiaryMenuItems) => (
-            <li
-              className="cursor-pointer py-3 pl-5 pr-10 hover:bg-blue-300"
-              key={item.id}
-            >
+            <li className="list_item pr-10" key={item.id}>
               <>
                 <div className="font-medium text-[16px] leading-6">
                   {t(item.title)}
