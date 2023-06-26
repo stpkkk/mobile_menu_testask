@@ -4,9 +4,9 @@ import FlagBY from "../public/assets/icons/flag-BY.svg";
 import FlagRU from "../public/assets/icons/flag-RU.svg";
 import FlagKZ from "../public/assets/icons/flag-KZ.svg";
 import FlagTR from "../public/assets/icons/flag-TR.svg";
-import { languageSwitcherTypes } from "@types";
+import { LanguageSwitcherTypes } from "@types";
 
-export const languages: languageSwitcherTypes[] = [
+export const languages: LanguageSwitcherTypes[] = [
   {
     code: "en",
     name: "United States",
